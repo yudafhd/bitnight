@@ -1,0 +1,20 @@
+/* Reserve a real, separate row for the canvas, never behind the controls. */
+main{padding-top:24px}
+#gallery{--model-height:clamp(320px,50svh,480px);height:auto}
+.cards{position:relative;inset:auto}
+.card{padding:24px;display:grid;grid-template-rows:36px var(--model-height) auto;gap:0;min-width:0}
+.card-top{grid-row:1;align-items:start}
+.card-bottom{grid-row:3;background:none;padding-top:16px;align-self:start}
+#stage{top:60px;bottom:auto;height:var(--model-height);z-index:1}
+.badge,.era{font-size:12px}
+.actions{position:relative;z-index:2}
+@media(max-width:700px){
+ main{padding-top:18px}
+ #gallery{--model-height:clamp(290px,45svh,410px);height:auto}
+ .card{display:none;height:auto;padding:24px}
+ .card.active{display:grid}
+ .cards{display:block}
+ .card-bottom{padding-top:16px}
+ .mobile-nav{margin-bottom:14px}
+ footer{font-size:12px}
+}
